@@ -25,7 +25,7 @@ class Deck
 	private ArrayList<Card> cards;
 	private int size;
 	private String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
-	private String[] ranks = {"2","3","4","5","6","7","8","9","10","Jack","Queen","King","Ace"};
+	private String[] ranks = {"Two","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King","Ace"};
 	private int[] values = {2,3,4,5,6,7,8,9,10,10,10,10,11};
 	public Deck()
    {
