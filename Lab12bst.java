@@ -37,6 +37,7 @@ class Deck
 				cards.add(card);
 			}
 		 }
+		shuffle();
 	 }
 	public String toString(){
 		String deckPrint = "";
@@ -44,5 +45,32 @@ class Deck
 			deckPrint += "" + cards.get(x).toString() + "\n";
 		}
 		return deckPrint;
+	}
+	private void swap(int index1, int index2){
+		Card c1 = cards.get(index1);
+		cards.set(index1, cards.get(index2));
+		cards.set(index2, c1);
+	}
+	/*private void shuffle(){
+		for (int x = 0; x<1000; x++){
+			int r = (int)(Math.random()*52);
+			int s = (int)(Math.random()*52);
+			while (r==s){
+				r = (int)(Math.random()*52);
+				s = (int)(Math.random()*52);
+			}
+			swap(r,s);
+		}
+	}*/
+	private void shuffle(){
+		int lugar = (int)(Math.random()*52);
+		for (int x = 0; x<cards.size(); x++){
+			int randLoc1 = (int)(Math.random()*52);
+			int randLoc2 = (int)(Math.random()*52);
+			while (cards.get(randLoc1).matches(cards.get(randLoc2)) == true){
+				randLoc1 = (int)(Math.random()*52);
+				randLoc2 = (int)(Math.random()*52);
+			}
+		}
 	}
 }
