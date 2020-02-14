@@ -63,7 +63,6 @@ class Deck
 		}
 	}*/
 	private void shuffle(){
-		int lugar = (int)(Math.random()*52);
 		for (int x = 0; x<cards.size(); x++){
 			int randLoc1 = (int)(Math.random()*52);
 			int randLoc2 = (int)(Math.random()*52);
@@ -71,6 +70,9 @@ class Deck
 				randLoc1 = (int)(Math.random()*52);
 				randLoc2 = (int)(Math.random()*52);
 			}
+			Card temp = cards.get(randLoc1);
+			cards.set(randLoc1, cards.get(randLoc2));
+			cards.set(randLoc2, temp);
 		}
 	}
 }
